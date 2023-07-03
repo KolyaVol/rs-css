@@ -1,0 +1,39 @@
+.levels {
+  grid-area: levels;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.levels--item {
+  height: 2rem;
+  width: 80%;
+  border: solid 1px #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.levels--item:hover {
+  background-color: #87c4ec;
+}
+.levels--item.active {
+  background-color: #eef590;
+}
+.levels--item.complited {
+  background-color: #04800a ;
+  text-decoration: line-through;
+  color: var(--common-bgc);
+}
+.levels--item.complited.with-help {
+  background-color: #4681f0;
+}
+
+.restart {
+  background-color: #f11717;
+  width: 4rem;
+  height: 1.2rem;
+  margin: 2rem 0;
+}
