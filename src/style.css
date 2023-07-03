@@ -1,0 +1,198 @@
+* {
+  --common-bgc: #4a4b50;
+  --code-box-background: #383535;
+  --light-color: #a7a1a1;
+  --dark-color: #706e6e;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: var(--common-bgc);
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  height: 5vh;
+  padding-top: 3vh;
+}
+
+.header--title {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  color: rgb(106, 106, 109);
+}
+
+.cmn-text {
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.light {
+  color: var(--light-color);
+}
+.dark {
+  color: #706e6e;
+}
+
+.main {
+  display: grid;
+  width: 100vw;
+  height: 90vh;
+  padding: 2rem;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1.3fr 2fr;
+  grid-template-areas:
+    "visual visual levels "
+    "code code levels";
+}
+
+main > * {
+  height: 100%;
+  width: 100%;
+}
+
+footer {
+  position: absolute;
+  bottom: 10%;
+  right: 2rem;
+  width: 33%;
+  height: max-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer--github,
+.footer--rsschool,
+.footer--github-a {
+  display: flex;
+  width: 33%;
+  height: 4rem;
+  gap: 5%;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+.footer--github-a {
+  width: 100%;
+  font-size: 14px;
+  color: var(--light-color);
+  text-align: center;
+}
+
+.footer--github-svg {
+  width: 7%;
+}
+
+.footer--rsschool-img {
+  width: 100%;
+  height: 2rem;
+}
+
+.win-words {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background-color: #6e6d6db9;
+  opacity: 0;
+  transition: 2s ease-in-out;
+}
+
+.win-words.finished1 {
+  display: flex;
+}
+.win-words.finished2 {
+  opacity: 1;
+  transition: 2s ease-in-out;
+}
+
+.win-words h2 {
+  width: 40vw;
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 20%;
+  background-color: #fff;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+@media (max-width: 950px) {
+  .main {
+    grid-template-columns: 1fr 1fr 0.3fr;
+    grid-template-rows: 1.3fr 2fr;
+    grid-template-areas:
+      "visual visual visual "
+      "code code levels";
+  }
+  footer {
+    position: static;
+    width: 100%;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+}
+@media (max-width: 750px) {
+  .header {
+    padding-top: 1.5vh;
+  }
+  .main {
+    grid-template-columns: 1fr 1fr 0.3fr;
+    grid-template-rows: 0.7fr 2fr;
+    font-size: 11px;
+  }
+   footer {
+    position: static;
+    width: 100%;
+    margin-top: -2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  
+}
+@media (max-width: 600px) {
+  .main {
+    padding: 2rem 0;
+    font-size: 1.5vw;
+  }
+}
+
+@keyframes correct-answer {
+  0% {
+    box-shadow: 0 0 0 0;
+  }
+  50% {
+    box-shadow: 0 0 40px 40px #21b603;
+  }
+  100% {
+    box-shadow: 0 0 0 0;
+  }
+}
+
+@keyframes wrong-answer {
+  0% {
+    box-shadow: 0 0 0 0;
+  }
+  50% {
+    box-shadow: 0 0 40px 40px #b60903;
+  }
+  100% {
+    box-shadow: 0 0 0 0;
+  }
+}

@@ -1,0 +1,138 @@
+.code {
+  grid-area: code;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 10fr;
+  grid-template-areas:
+    "c-title c-title"
+    "code-inp code-html";
+  width: 95%;
+  background-color: var(--code-box-background);
+  padding: 1rem;
+  line-height: 150%;
+}
+
+.code.correct {
+  animation: correct-answer 1s ease-in-out forwards;
+}
+.code.wrong {
+  animation: wrong-answer 1s ease-in-out forwards;
+}
+
+.code--title {
+  grid-area: c-title;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #4a4b50;
+  padding: 0.5rem;
+}
+
+.code--title div {
+  width: 50%;
+  padding: 0 0.7rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.code--input {
+  grid-area: code-inp;
+  display: grid;
+  column-gap: 0.5rem;
+  grid-template-columns: 1.5rem 1fr max-content;
+  grid-template-rows: 2rem max-content;
+  grid-template-areas:
+    "lin-num inp-fie inp-btn"
+    "lin-num inp-inf inp-inf";
+  width: 100%;
+  height: 100%;
+  background-color: #efefef;
+  font-family: menlo, monospace;
+}
+
+.line-numbers {
+  grid-area: lin-num;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: right;
+  width: 1.5rem;
+  padding: 0.3rem;
+}
+
+.ln-light {
+  color: #999;
+  background-color: #ddd;
+}
+.ln-dark {
+  color: #666;
+  border-right: solid 1px #333;
+}
+
+.code--input-field {
+  grid-area: inp-fie;
+  height: 1.5rem;
+  margin-top: 0.3rem;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  color: #999;
+  font-family: menlo, monospace;
+}
+
+.code--input-btn {
+  grid-area: inp-btn;
+  width: 4rem;
+  height: 1.2rem;
+  margin: 0.5rem 0.5rem;
+  font-family: menlo, monospace;
+}
+
+.code--input-info {
+  grid-area: inp-inf;
+  color: #999;
+  margin-top: -0.2rem;
+}
+
+.code--input-help-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 1.8rem;
+}
+
+.code--input-help {
+  width: 5rem;
+  height: 1.2rem;
+  font-family: menlo, monospace;
+}
+
+@media (max-width: 750px) {
+  .code--input {
+    position: relative;
+    grid-template-columns: 1.5rem 1fr;
+    grid-template-rows: 2rem max-content;
+    grid-template-areas:
+      "lin-num inp-fie "
+      "lin-num inp-inf ";
+  }
+
+  .code--input-btn {
+    position: absolute;
+    top: 5.5rem;
+    left: calc(50% - 1.5rem);
+    width: 4rem;
+    height: 1.2rem;
+    margin: 0.5rem 0.5rem;
+    font-family: menlo, monospace;
+  }
+}
+
+@media (max-width: 600px) {
+  .code--input-help {
+    margin-top: 2rem;
+  }
+  .code--title span {
+    font-size: 1.5vw;
+  }
+}
